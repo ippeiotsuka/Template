@@ -1,0 +1,29 @@
+
+// テキスト情報入力----------------------------------------------------------------------------------------
+@mixin font($size: null, $height: null, $spacing: null, $weight: null) {
+  @if $size {
+    font-size: calc($size / 10 * 1rem);
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $spacing {
+    letter-spacing: calc($spacing / 1000 * 1em);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+// ブレイクポイント------------------------------------------------------------------------------------
+@mixin tb {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: 1080px) {
+    @content;
+  }
+}

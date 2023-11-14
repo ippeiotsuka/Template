@@ -1,0 +1,13 @@
+@use "../global/" as g;
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: g.$c-black;
+  font-family: g.$f-jp;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}

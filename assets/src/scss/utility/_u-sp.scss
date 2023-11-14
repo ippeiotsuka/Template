@@ -1,0 +1,8 @@
+@use "../global/" as g;
+
+.u-sp{
+    display: block;
+    @include g.pc {
+      display: none;
+    }
+}
