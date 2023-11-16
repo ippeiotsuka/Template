@@ -165,9 +165,12 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  color: #000000;
   font-family: "Noto Sans JP", sans-serif;
+  color: #222222;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0em;
+  font-weight: 400;
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
