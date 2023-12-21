@@ -3,7 +3,7 @@ add_action('wp_enqueue_scripts', 'add_styles');
 function add_styles()
 {
     // WordPress提供のjquery.jsを読み込まない
-    wp_deregister_script('jquery');
+    // wp_deregister_script('jquery');  JS関連で何か異常があったときはこのコードを読み込んでみる
     // jQueryの読み込み
     wp_register_script('jquery_script', '//code.jquery.com/jquery-3.6.1.min.js', array(), '1.0', true);
     // swiper
