@@ -1,8 +1,8 @@
-@use "../global/" as g;
+@use "../global/" as *;
 
-.u-sp{
-    display: block;
-    @include g.pc {
-      display: none;
-    }
+.u-sp {
+  display: block;
+  @include pc {
+    display: none;
+  }
 }

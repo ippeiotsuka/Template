@@ -1,1 +1,11 @@
-@use "../global/" as g;
+@use "../global/" as *;
+
+.l-inner {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 14px;
+  @include pc {
+    max-width: $w-inner;
+    padding: 0;
+  }
+}
