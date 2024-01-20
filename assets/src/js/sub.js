@@ -1,6 +1,11 @@
 export function functionName() {
-  const alertButton = document.getElementById("js-alert-button");
-  alertButton.addEventListener("click", () => {
-    alert("ボタンがクリックされたっつ");
+  // ----------------------------------------------------------------------------------------------
+  // ハンバーガーメニュー
+  // ----------------------------------------------------------------------------------------------
+  const hamburger = document.querySelector(".l-header-hamburger");
+  const hamburgerMenu = document.querySelector(".l-header-hamburger-menu");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("is-active");
+    hamburgerMenu.classList.toggle("is-active");
   });
 }
