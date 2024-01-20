@@ -28,4 +28,26 @@
 
 <body <?php body_class(); ?>><?php wp_body_open(); ?>
     <header class="l-header">
+        <div class="l-header-content">
+            <h1 class="l-header__logo">
+                <a href="">ロゴ</a>
+            </h1>
+            <div class="l-header__right">
+                <button class="l-header-hamburger">
+                    <span class="l-header-hamburger__bar"></span>
+                    <span class="l-header-hamburger__bar"></span>
+                    <span class="l-header-hamburger__bar"></span>
+                </button>
+                <nav class="l-header-nav">
+                    <ul class="l-header-nav__list">
+                        <li class="l-header-nav__item"><a href="">トップ</a></li>
+                        <li class="l-header-nav__item"><a href="">サービス</a></li>
+                        <li class="l-header-nav__item"><a href="">事例</a></li>
+                        <li class="l-header-nav__item"><a href="">会社概要</a></li>
+                        <li class="l-header-nav__item"><a href="">ブログ</a></li>
+                        <li class="l-header-nav__item"><a href="">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
