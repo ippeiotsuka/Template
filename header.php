@@ -29,9 +29,21 @@
 <body <?php body_class(); ?>><?php wp_body_open(); ?>
     <header class="l-header">
         <div class="l-header-content">
-            <h1 class="l-header__logo">
-                <a href="">ロゴ</a>
-            </h1>
+            <?php
+            if (!is_front_page()) {
+                echo '<div class="l-header__logo">';
+            } else {
+                echo '<h1 class="l-header__logo">';
+            }
+
+            echo '<a href="' . esc_url(home_url('/')) . '">ロゴ</a>';
+
+            if (!is_front_page()) {
+                echo '</div>';
+            } else {
+                echo '</h1>';
+            }
+            ?>
             <div class="l-header__right">
                 <button class="l-header-hamburger">
                     <span class="l-header-hamburger__bar"></span>
