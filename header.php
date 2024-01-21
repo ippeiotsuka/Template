@@ -52,12 +52,12 @@
                 </button>
                 <nav class="l-header-nav">
                     <ul class="l-header-nav__list">
-                        <li class="l-header-nav__item"><a href="">トップ</a></li>
-                        <li class="l-header-nav__item"><a href="">サービス</a></li>
-                        <li class="l-header-nav__item"><a href="">事例</a></li>
-                        <li class="l-header-nav__item"><a href="">会社概要</a></li>
-                        <li class="l-header-nav__item"><a href="">ブログ</a></li>
-                        <li class="l-header-nav__item"><a href="">お問い合わせ</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">トップ</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">サービス</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">事例</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">会社概要</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">ブログ</a></li>
+                        <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </div>
