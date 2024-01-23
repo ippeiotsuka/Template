@@ -2,7 +2,7 @@
 
 .u-sp {
   display: block;
-  @include pc {
+  @include tb {
     display: none;
   }
 }
