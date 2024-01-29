@@ -20,9 +20,18 @@ function add_styles()
     wp_enqueue_style('main_style', get_template_directory_uri() . '/assets/dist/css/style.css', array(), '1.0');
 }
 
+// タイトルタグの自動設定
+add_theme_support('title-tag');
+function my_title_separator($separator)
+{
+    $separator = '|';
+    return $separator;
+}
+add_filter('document_title_separator', 'my_title_separator');
 
+
+// アイキャッチ画像の有効化
 add_action('init', function () {
-    // アイキャッチ画像の有効化
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
 

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
-    <title>ページタイトル</title>
     <meta name="description" content="ページの説明" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
