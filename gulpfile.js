@@ -70,7 +70,7 @@ function buildServer(done) {
     //  server: { baseDir: './' },
     // 動的サイト
     files: ["**/*"],
-    proxy: "http://template.local/",
+    proxy: "http://template.wp/",
     open: true,
     watchOptions: {
       debounceDelay: 1000,
