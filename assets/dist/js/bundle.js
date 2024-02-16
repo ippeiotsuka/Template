@@ -1,1 +1,1 @@
-!function(){"use strict";document.getElementById("js-alert-button").addEventListener("click",(function(){alert("ボタンがクリックされたっつ")}))}();
+!function(){"use strict";var e,t;e=document.querySelector(".l-header-hamburger"),t=document.querySelector(".l-header-hamburger-menu"),e.addEventListener("click",(function(){e.classList.toggle("is-active"),t.classList.toggle("is-active")}))}();
