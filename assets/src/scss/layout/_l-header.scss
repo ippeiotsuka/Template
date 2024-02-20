@@ -34,6 +34,7 @@
 // l-header-hamburger
 // ----------------------------------------------------------------------------------------------
 .l-header-hamburger {
+  z-index: $z100;
   position: relative;
   display: block;
   width: 30px;
@@ -100,4 +101,27 @@
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+// ----------------------------------------------------------------------------------------------
+// l-header-hamburger-menu
+// ----------------------------------------------------------------------------------------------
+.l-header-hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: $c-white;
+  transition: 0.5s;
+  opacity: 0;
+  @include pc {
+    display: none;
+  }
+
+  &.is-active {
+    left: 0;
+    display: block;
+    opacity: 1;
+  }
 }
