@@ -7,7 +7,8 @@ function add_styles()
     // jQueryの読み込み
     wp_register_script('jquery_script', '//code.jquery.com/jquery-3.6.1.min.js', array(), '1.0', true);
     // swiper
-    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '1.0');
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0');
     // gsap
     wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js', array(), '1.0');
     // ScrollTrigger
