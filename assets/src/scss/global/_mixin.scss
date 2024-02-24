@@ -44,7 +44,7 @@
 }
 
 @mixin l {
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 960px) {
     @content;
   }
 }
