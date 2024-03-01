@@ -31,26 +31,32 @@
   }
 }
 
+@mixin m {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
 @mixin tb {
   @media screen and (min-width: 768px) {
     @content;
   }
 }
 
-@mixin m {
-  @media screen and (min-width: 850px) {
-    @content;
-  }
-}
-
 @mixin l {
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 900px) {
     @content;
   }
 }
 
 @mixin pc {
   @media screen and (min-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
