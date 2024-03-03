@@ -10,9 +10,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="webclip.png" /> <!-- Webページのショートカットを作成したとき、Webページをスマートフォンのホーム画面に追加したときに表示されるアイコン -->
   <meta property="og:site_name" content="ページタイトル" />
-  <meta property="og:url" content="ページのURL" />
+  <meta property="og:url" content="<?php the_permalink(); ?>" />
   <meta property="og:type" content="website or article" />
-  <meta property="og:title" content="ページタイトル" />
+  <meta property="og:title" content="<?php the_title(); ?>" />
   <meta property="og:description" content="ページの説明" />
   <meta property="og:image" content="URL" />
   <meta property="og:locale" content="ja_JP" />
