@@ -21,6 +21,8 @@ function add_styles()
     wp_enqueue_style('main_style', get_template_directory_uri() . '/assets/dist/css/style.css', array(), '1.0');
 }
 
+
+
 // タイトルタグの自動設定
 add_theme_support('title-tag');
 function my_title_separator($separator)
@@ -29,6 +31,7 @@ function my_title_separator($separator)
     return $separator;
 }
 add_filter('document_title_separator', 'my_title_separator');
+
 
 
 // アイキャッチ画像の有効化
@@ -43,12 +46,15 @@ add_action('init', function () {
 });
 
 
+
 // contact form 7 pタグ、brタグの削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false()
 {
     return false;
 }
+
+
 
 // mw wp form pタグ、brタグの削除
 function mvwpform_autop_filter()
@@ -62,6 +68,8 @@ function mvwpform_autop_filter()
     }
 }
 mvwpform_autop_filter();
+
+
 
 
 // お問い合わせ完了後サンクスページにジャンプする設定
@@ -81,6 +89,8 @@ function add_origin_thanks_page()
    EOC;
 }
 
+
+
 // archive.phpのスラッグ名指定
 function post_has_archive($args, $post_type)
 {
@@ -92,3 +102,34 @@ function post_has_archive($args, $post_type)
     return $args;
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+
+// ----------------------------------------------------------------------------------------------
+// コンテンツごとにアーカイブページの表示件数を変更する(使用時にコメントアウトする)
+// ----------------------------------------------------------------------------------------------
+// function change_posts_per_page($query) {
+//     if ( is_admin() || ! $query->is_main_query() )
+//         return;
+
+//     /* アーカイブページの時に表示件数を10件にセット */
+//     if ( $query->is_archive() ) {
+//         $query->set( 'posts_per_page', '10' );
+//     }
+//     /* ポストアーカイブの時に表示件数を15件にセット */
+//     if ( $query->is_post_type_archive() ) {
+//         $query->set( 'posts_per_page', '15' );
+//     }
+//     /* 検索ページの時に表示件数を20件にセット */
+//     if ( $query->is_search() ) {
+//         $query->set( 'posts_per_page', '20' );
+//     }
+//     /* 筆者ページの時に表示件数を25件にセット */
+//     if ( $query->is_author() ) {
+//         $query->set( 'posts_per_page', '25' );
+//     }
+//     /* タグページの時に表示件数を25件にセット */
+//     if ( $query->is_tag() ) {
+//         $query->set( 'posts_per_page', '30' );
+//     }
+// }
+// add_action( 'pre_get_posts', 'change_posts_per_page' );
