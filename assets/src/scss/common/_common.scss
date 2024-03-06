@@ -1,6 +1,6 @@
 @use "../global/" as *;
 
-html{
+html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
@@ -11,10 +11,15 @@ body {
   @include font(16, 24, 0, 400);
   width: 100%;
   -webkit-font-smoothing: antialiased;
+
+  &.is-active {
+    position: fixed;
+    height: 100%;
+  }
 }
 
-a{
-  &:hover{
+a {
+  &:hover {
     opacity: 0.7;
   }
 }

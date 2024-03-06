@@ -7,5 +7,6 @@ export function functionName() {
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("is-active");
     hamburgerMenu.classList.toggle("is-active");
+    $("body").toggleClass("is-active");
   });
 }
