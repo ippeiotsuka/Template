@@ -1,7 +1,7 @@
 @use "../global/" as *;
 
 .l-inner {
-  max-width: 300px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 14px;
   @include pc {

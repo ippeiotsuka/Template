@@ -1,4 +1,6 @@
 <?php get_header(); ?>
-<main class="l-main">
-</main>
+<div class="l-wrapper">
+  <main class="l-main">
+  </main>
+</div>
 <?php get_footer(); ?>

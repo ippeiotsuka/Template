@@ -174,7 +174,10 @@ body {
   font-weight: 400;
   width: 100%;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+}
+body.is-active {
+  position: fixed;
+  height: 100%;
 }
 
 a:hover {
@@ -298,8 +301,17 @@ a:hover {
   opacity: 1;
 }
 
+.l-wrapper {
+  margin-top: 64px;
+}
+@media screen and (min-width: 1080px) {
+  .l-wrapper {
+    margin-top: 80px;
+  }
+}
+
 .l-inner {
-  max-width: 300px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 14px;
 }
@@ -322,8 +334,17 @@ a:hover {
 .u-sp {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .u-sp {
+    display: none;
+  }
+}
+
+.u-sp-tb {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .u-sp-tb {
     display: none;
   }
 }
@@ -335,5 +356,9 @@ a:hover {
   text-underline-offset: -4px;
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
+}
+
+.u-br {
+  display: inline-block;
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
