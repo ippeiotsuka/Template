@@ -322,6 +322,15 @@ a:hover {
   }
 }
 
+.l-section {
+  padding: 40px 0;
+}
+@media screen and (min-width: 1080px) {
+  .l-section {
+    padding: 60px 0;
+  }
+}
+
 .u-pc {
   display: none;
 }

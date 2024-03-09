@@ -1,0 +1,8 @@
+@use "../global/" as *;
+
+.l-section{
+  padding: 40px 0;
+  @include pc {
+    padding: 60px 0;
+  }
+}
