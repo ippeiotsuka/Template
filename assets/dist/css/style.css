@@ -370,4 +370,8 @@ a:hover {
 .u-br {
   display: inline-block;
 }
+
+.u-shadow {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
 /*# sourceMappingURL=sourcemaps/style.css.map */
