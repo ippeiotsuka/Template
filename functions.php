@@ -97,7 +97,7 @@ function post_has_archive($args, $post_type)
     if ('post' == $post_type) {
         $args['rewrite'] = true;
         $args['has_archive'] = 'archive';
-        $args['label'] = 'archive';
+        // $args['label'] = '投稿';
     }
     return $args;
 }
