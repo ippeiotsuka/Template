@@ -23,6 +23,13 @@ function add_styles()
 
 
 
+
+
+// バージョン情報を隠す
+remove_action('wp_head', 'wp_generator');
+
+
+
 // タイトルタグの自動設定
 add_theme_support('title-tag');
 function my_title_separator($separator)
