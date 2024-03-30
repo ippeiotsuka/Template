@@ -115,6 +115,7 @@
   background: $c-white;
   transition: 0.5s;
   opacity: 0;
+  overflow-y: scroll;
   @include pc {
     display: none;
   }
