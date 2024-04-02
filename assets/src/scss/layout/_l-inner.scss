@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 0 14px;
   @include pc {
-    max-width: $w-inner;
+    max-width: $inner;
     padding: 0;
   }
 }

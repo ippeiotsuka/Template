@@ -1,3 +1,5 @@
+@use "valiables" as *;
+
 // ----------------------------------------------------------------------------------------------
 // テキスト情報
 // ----------------------------------------------------------------------------------------------
@@ -20,43 +22,43 @@
 // ブレイクポイント
 // ----------------------------------------------------------------------------------------------
 @mixin s-max {
-  @media screen and (max-width: 340px) {
+  @media screen and (max-width: $s-max) {
     @content;
   }
 }
 
 @mixin sp-max {
-  @media screen and (max-width: 385px) {
+  @media screen and (max-width: $sp-max) {
     @content;
   }
 }
 
 @mixin m {
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $m) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tb) {
     @content;
   }
 }
 
 @mixin l {
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: $l) {
     @content;
   }
 }
 
 @mixin pc {
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: $pc) {
     @content;
   }
 }
 
 @mixin xl {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $xl) {
     @content;
   }
 }

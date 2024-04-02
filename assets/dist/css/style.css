@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/*
+ * 機能：clamp関数の文字列を返す
+ * 引数：$size-at-min-width サイズ(フォントサイズなど)の最小値(pxやremなどの単位は必須)
+ * 　　　$size-at-max-width サイズ(フォントサイズなど)の最大値(pxやremなどの単位は必須)
+ * 　　　$min-width [省略可]サイズが最小値に到達する画面幅
+ * 　　　$max-width [省略可]サイズが最大値に到達する画面幅
+ * 使用方法：
+ *　　デフォルトの最小画面幅$min-widthと最大画面幅$max-widthを事前に指定しておく
+ *　　最小幅と最大幅をデフォルト以外にしたい場合は、引数にそれぞれ単位付きの画面幅を入れる
+ */
 html {
   color: #000;
   background: #fff;
@@ -27,7 +38,8 @@ textarea,
 p,
 blockquote,
 th,
-td {
+td,
+figure {
   margin: 0;
   padding: 0;
 }
@@ -184,6 +196,50 @@ a:hover {
   opacity: 0.7;
 }
 
+.u-pc {
+  display: none;
+}
+@media screen and (min-width: 1080px) {
+  .u-pc {
+    display: block;
+  }
+}
+
+.u-sp {
+  display: block;
+}
+@media screen and (min-width: 1080px) {
+  .u-sp {
+    display: none;
+  }
+}
+
+.u-sp-tb {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .u-sp-tb {
+    display: none;
+  }
+}
+
+.u-under-line {
+  text-decoration-color: #678901;
+  text-decoration-line: underline;
+  text-decoration-thickness: 8px;
+  text-underline-offset: -4px;
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+}
+
+.u-br {
+  display: inline-block;
+}
+
+.u-shadow {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .l-header {
   position: fixed;
   z-index: 100;
@@ -289,6 +345,7 @@ a:hover {
   background: #ffffff;
   transition: 0.5s;
   opacity: 0;
+  overflow-y: scroll;
 }
 @media screen and (min-width: 1080px) {
   .l-header-hamburger-menu {
@@ -317,7 +374,7 @@ a:hover {
 }
 @media screen and (min-width: 1080px) {
   .l-inner {
-    max-width: 1366px;
+    max-width: 1000px;
     padding: 0;
   }
 }
@@ -329,49 +386,5 @@ a:hover {
   .l-section {
     padding: 60px 0;
   }
-}
-
-.u-pc {
-  display: none;
-}
-@media screen and (min-width: 1080px) {
-  .u-pc {
-    display: block;
-  }
-}
-
-.u-sp {
-  display: block;
-}
-@media screen and (min-width: 1080px) {
-  .u-sp {
-    display: none;
-  }
-}
-
-.u-sp-tb {
-  display: block;
-}
-@media screen and (min-width: 768px) {
-  .u-sp-tb {
-    display: none;
-  }
-}
-
-.u-under-line {
-  text-decoration-color: #678901;
-  text-decoration-line: underline;
-  text-decoration-thickness: 8px;
-  text-underline-offset: -4px;
-  -webkit-text-decoration-skip-ink: none;
-  text-decoration-skip-ink: none;
-}
-
-.u-br {
-  display: inline-block;
-}
-
-.u-shadow {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
