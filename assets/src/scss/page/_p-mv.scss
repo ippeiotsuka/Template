@@ -1,0 +1,25 @@
+@use "../global/" as *;
+
+.p-mv{
+  padding: 350px 16px 40px;
+  background: url(../img/image_dummy.png) no-repeat center center / cover;
+  @include tb {
+    padding: 450px 24px 56px;
+  }
+}
+
+.p-mv__head{
+  @include font(30,30,0,700);
+  @include tb {
+    font-size: 4.5rem;
+  }
+}
+
+.p-mv__txt{
+  margin-top: 32px;
+  @include font(18,27,0,700);
+  @include tb {
+    margin-top: 40px;
+    font-size: 2.2rem;
+  }
+}

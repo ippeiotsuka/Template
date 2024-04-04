@@ -2,7 +2,7 @@
 
 .l-section{
   padding: 40px 0;
-  @include pc {
+  @include tb {
     padding: 60px 0;
   }
 }

@@ -2,7 +2,7 @@
 
 .l-wrapper {
   margin-top: 64px;
-  @include pc {
+  @include tb {
     margin-top: 80px;
   }
 }

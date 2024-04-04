@@ -3,7 +3,7 @@
 .l-inner {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 14px;
+  padding: 0 16px;
   @include pc {
     max-width: $inner;
     padding: 0;

@@ -2,11 +2,23 @@ export function functionName() {
   // ----------------------------------------------------------------------------------------------
   // ハンバーガーメニュー
   // ----------------------------------------------------------------------------------------------
+  const header = document.querySelector(".l-header");
   const hamburger = document.querySelector(".l-header-hamburger");
-  const hamburgerMenu = document.querySelector(".l-header-hamburger-menu");
+  const hamburgerWindow = document.querySelector(".l-header-window");
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("is-active");
-    hamburgerMenu.classList.toggle("is-active");
+    header.classList.toggle("is-active");
     $("body").toggleClass("is-active");
   });
+
+  function checkWidth() {
+    if (window.innerWidth >= 1080) {
+      hamburgerWindow.style.display = "none";
+      header.classList.remove("is-active");
+      $("body").removeClass("is-active");
+    } else {
+      hamburgerWindow.style.display = "block";
+    }
+  }
+  window.addEventListener("load", checkWidth);
+  window.addEventListener("resize", checkWidth);
 }
