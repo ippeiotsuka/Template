@@ -1,7 +1,7 @@
 @use "../global/" as *;
 
 .l-inner {
-  max-width: 600px;
+  max-width: 600px; //コンテンツが広がりすぎないように
   margin: 0 auto;
   padding: 0 16px;
   @include pc {

@@ -1,1 +1,95 @@
 @use "../global/" as *;
+
+.l-footer {
+  margin-top: auto;
+  padding-top: 48px;
+  color: $c-white;
+}
+
+// ---------------------------------------
+// .l-footer__wrap
+// ---------------------------------------
+.l-footer__wrap {
+  padding: 40px 0;
+  background: $c-black;
+}
+
+// ---------------------------------------
+// .l-footer__inner
+// ---------------------------------------
+.l-footer__inner {
+  margin: 0 auto;
+  padding: 0 16px;
+  @include pc {
+    max-width: $max-pc;
+    padding: 0 32px;
+  }
+}
+
+// ---------------------------------------
+// .l-footer__content
+// ---------------------------------------
+.l-footer__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  @include pc {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// ---------------------------------------
+// .l-footer__company
+// ---------------------------------------
+.l-footer__company {
+  text-align: center;
+  @include pc {
+    text-align: left;
+  }
+}
+
+// ---------------------------------------
+// .l-footer__logo
+// ---------------------------------------
+.l-footer__logo {
+  display: inline-block;
+  width: 100px;
+  transition: 0.3s;
+  @include tb {
+    width: 124px;
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  path {
+    fill: $c-white;
+  }
+}
+
+// ---------------------------------------
+// .l-footer__address
+// ---------------------------------------
+.l-footer__address {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  @include pc {
+    margin-top: 24px;
+    font-size: 1.4rem;
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// .l-footer-nav
+// ----------------------------------------------------------------------------------------------
+.l-footer-nav__list {
+  display: flex;
+  gap: 16px;
+  @include sp-max {
+    flex-direction: column;
+    align-items: center;
+  }
+}
