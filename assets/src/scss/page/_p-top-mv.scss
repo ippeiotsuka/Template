@@ -1,21 +1,23 @@
 @use "../global/" as *;
 
-.p-mv{
+.p-top-mv{
+  margin-top: 64px; //ヘッダー分の余白
   padding: 350px 16px 40px;
   background: url(../img/image_dummy.png) no-repeat center center / cover;
   @include tb {
+    margin-top: 80px; //ヘッダー分の余白
     padding: 450px 24px 56px;
   }
 }
 
-.p-mv__head{
+.p-top-mv__head{
   @include font(30,30,0,700);
   @include tb {
     font-size: 4.5rem;
   }
 }
 
-.p-mv__txt{
+.p-top-mv__txt{
   margin-top: 32px;
   @include font(18,27,0,700);
   @include tb {

@@ -1,8 +1,1 @@
 @use "../global/" as *;
-
-.l-wrapper {
-  margin-top: 64px;
-  @include tb {
-    margin-top: 80px;
-  }
-}

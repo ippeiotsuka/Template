@@ -1,0 +1,16 @@
+@use "../global/" as *;
+
+.c-btn {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 300px;
+  padding: 16px 0;
+  background: $c-main;
+  color: $c-white;
+}
+
+// 削除する
+.p-top-sec__btn {
+  margin: 40px auto 0 auto;
+}

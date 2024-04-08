@@ -245,6 +245,20 @@ body.is-active {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.c-btn {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 300px;
+  padding: 16px 0;
+  background: #012345;
+  color: #ffffff;
+}
+
+.p-top-sec__btn {
+  margin: 40px auto 0 auto;
+}
+
 .l-header {
   position: fixed;
   z-index: 100;
@@ -488,15 +502,6 @@ body.is-active {
   }
 }
 
-.l-wrapper {
-  margin-top: 64px;
-}
-@media screen and (min-width: 768px) {
-  .l-wrapper {
-    margin-top: 80px;
-  }
-}
-
 .l-inner {
   max-width: 600px;
   margin: 0 auto;
@@ -518,29 +523,31 @@ body.is-active {
   }
 }
 
-.p-mv {
+.p-top-mv {
+  margin-top: 64px;
   padding: 350px 16px 40px;
   background: url(../img/image_dummy.png) no-repeat center center/cover;
 }
 @media screen and (min-width: 768px) {
-  .p-mv {
+  .p-top-mv {
+    margin-top: 80px;
     padding: 450px 24px 56px;
   }
 }
 
-.p-mv__head {
+.p-top-mv__head {
   font-size: 3rem;
   line-height: 1;
   letter-spacing: 0em;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .p-mv__head {
+  .p-top-mv__head {
     font-size: 4.5rem;
   }
 }
 
-.p-mv__txt {
+.p-top-mv__txt {
   margin-top: 32px;
   font-size: 1.8rem;
   line-height: 1.5;
@@ -548,7 +555,7 @@ body.is-active {
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .p-mv__txt {
+  .p-top-mv__txt {
     margin-top: 40px;
     font-size: 2.2rem;
   }
