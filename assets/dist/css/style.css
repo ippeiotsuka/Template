@@ -246,6 +246,7 @@ body.is-active {
 }
 
 .c-btn {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -256,7 +257,9 @@ body.is-active {
 }
 
 .p-top-sec__btn {
-  margin: 40px auto 0 auto;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .l-header {
