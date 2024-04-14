@@ -111,6 +111,20 @@ function post_has_archive($args, $post_type)
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 
+
+// archive.phpのパンくずへの表示
+function my_static_breadcrumb_adder($breadcrumb_trail)
+{
+  if (get_post_type() === 'post') {
+    $item = new bcn_breadcrumb('BLOG', NULL, array('post'), home_url('archive/'), null, true);
+    $stuck = array_pop($breadcrumb_trail->breadcrumbs); // HOMEのパンくず一時退避
+    $breadcrumb_trail->breadcrumbs[] = $item; //投稿のパンくず追加
+    $breadcrumb_trail->breadcrumbs[] = $stuck; //HOMEのパンくずを戻す
+  }
+}
+add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
+
+
 // ----------------------------------------------------------------------------------------------
 // コンテンツごとにアーカイブページの表示件数を変更する(使用時にコメントアウトする)
 // ----------------------------------------------------------------------------------------------
