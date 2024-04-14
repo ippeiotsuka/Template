@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   font-family: $f-jp;
   color: $c-text;
-  @include font(16, 24, 0, 400);
+  @include font(16, 16, 0, 400);
   width: 100%;
   -webkit-font-smoothing: antialiased;
 
