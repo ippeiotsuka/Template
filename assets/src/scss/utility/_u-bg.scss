@@ -1,0 +1,21 @@
+@use "../global/" as *;
+
+.u-bg__white{
+  background: $c-white;
+}
+
+.u-bg__black{
+  background: $c-black;
+}
+
+.u-bg__main{
+  background: $c-main;
+}
+
+.u-bg__accent{
+  background: $c-accent;
+}
+
+.u-bg__bg{
+  background: $c-bg;
+}

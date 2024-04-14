@@ -1,0 +1,17 @@
+@use "../global/" as *;
+
+.u-color__white{
+  color: $c-white;
+}
+
+.u-color__black{
+  color: $c-black;
+}
+
+.u-color__main{
+  color: $c-main;
+}
+
+.u-color__accent{
+  color: $c-accent;
+}
