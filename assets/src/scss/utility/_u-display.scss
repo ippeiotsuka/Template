@@ -1,0 +1,73 @@
+@use "../global/" as *;
+
+// ----------------------------------------------------------------------------------------------
+// .u-display__sp
+// ----------------------------------------------------------------------------------------------
+.u-display__sp {
+  display: block;
+  @include tb {
+    display: none;
+  }
+
+  &--inline-block {
+    display: inline-block;
+    @include tb {
+      display: none;
+    }
+  }
+
+  &--inline {
+    display: inline;
+    @include tb {
+      display: none;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// .u-display__sp-tb
+// ----------------------------------------------------------------------------------------------
+.u-display__sp-tb {
+  display: block;
+  @include pc {
+    display: none;
+  }
+
+  &--inline-block {
+    display: inline-block;
+    @include pc {
+      display: none;
+    }
+  }
+
+  &--inline {
+    display: inline;
+    @include pc {
+      display: none;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// .u-display__pc
+// ----------------------------------------------------------------------------------------------
+.u-display__pc {
+  display: none;
+  @include pc {
+    display: block;
+  }
+
+  &--inline-block {
+    display: none;
+    @include pc {
+      display: inline-block;
+    }
+  }
+
+  &--inline {
+    display: none;
+    @include tb {
+      display: inline-block;
+    }
+  }
+}
