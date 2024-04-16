@@ -35,6 +35,7 @@ fieldset,
 legend,
 input,
 textarea,
+figure,
 p,
 blockquote,
 th,
@@ -184,7 +185,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   color: #222222;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1;
   letter-spacing: 0em;
   font-weight: 400;
   width: 100%;
@@ -201,31 +202,115 @@ body.is-active {
   }
 }
 
-.u-pc {
-  display: none;
-}
-@media screen and (min-width: 1080px) {
-  .u-pc {
-    display: block;
-  }
-}
-
-.u-sp {
-  display: block;
-}
-@media screen and (min-width: 1080px) {
-  .u-sp {
-    display: none;
-  }
-}
-
-.u-sp-tb {
+.u-display__sp {
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .u-sp-tb {
+  .u-display__sp {
     display: none;
   }
+}
+.u-display__sp--inline-block {
+  display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  .u-display__sp--inline-block {
+    display: none;
+  }
+}
+.u-display__sp--inline {
+  display: inline;
+}
+@media screen and (min-width: 768px) {
+  .u-display__sp--inline {
+    display: none;
+  }
+}
+
+.u-display__sp-tb {
+  display: block;
+}
+@media screen and (min-width: 1080px) {
+  .u-display__sp-tb {
+    display: none;
+  }
+}
+.u-display__sp-tb--inline-block {
+  display: inline-block;
+}
+@media screen and (min-width: 1080px) {
+  .u-display__sp-tb--inline-block {
+    display: none;
+  }
+}
+.u-display__sp-tb--inline {
+  display: inline;
+}
+@media screen and (min-width: 1080px) {
+  .u-display__sp-tb--inline {
+    display: none;
+  }
+}
+
+.u-display__pc {
+  display: none;
+}
+@media screen and (min-width: 1080px) {
+  .u-display__pc {
+    display: block;
+  }
+}
+.u-display__pc--inline-block {
+  display: none;
+}
+@media screen and (min-width: 1080px) {
+  .u-display__pc--inline-block {
+    display: inline-block;
+  }
+}
+.u-display__pc--inline {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .u-display__pc--inline {
+    display: inline-block;
+  }
+}
+
+.u-color__white {
+  color: #ffffff;
+}
+
+.u-color__black {
+  color: #000000;
+}
+
+.u-color__main {
+  color: #012345;
+}
+
+.u-color__accent {
+  color: #678901;
+}
+
+.u-bg__white {
+  background: #ffffff;
+}
+
+.u-bg__black {
+  background: #000000;
+}
+
+.u-bg__main {
+  background: #012345;
+}
+
+.u-bg__accent {
+  background: #678901;
+}
+
+.u-bg__bg {
+  background: #f5f5f5;
 }
 
 .u-under-line {
