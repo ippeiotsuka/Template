@@ -106,7 +106,7 @@ function custom_wpcf7_validate_kana($result, $tag)
   $name  = $tag->name;
   $value = isset($_POST[$name]) ? trim(wp_unslash(strtr((string) $_POST[$name], "\n", " "))) : "";
 
-  // //平仮名のみ
+  // //カタカナのみ
   if (($name === "kana") && !empty($value)) {
     $pattern = "/^[ァ-ン]+$/u";
 
