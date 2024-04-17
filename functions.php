@@ -25,23 +25,16 @@ function add_styles()
 
 
 
+// ----------------------------------------------------------------------------------------------
 // バージョン情報を隠す
+// ----------------------------------------------------------------------------------------------
 remove_action('wp_head', 'wp_generator');
 
 
 
-// タイトルタグの自動設定
-add_theme_support('title-tag');
-function my_title_separator($separator)
-{
-    $separator = '|';
-    return $separator;
-}
-add_filter('document_title_separator', 'my_title_separator');
-
-
-
+// ----------------------------------------------------------------------------------------------
 // アイキャッチ画像の有効化
+// ----------------------------------------------------------------------------------------------
 add_action('init', function () {
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
@@ -54,7 +47,9 @@ add_action('init', function () {
 
 
 
+// ----------------------------------------------------------------------------------------------
 // contact form 7 pタグ、brタグの削除
+// ----------------------------------------------------------------------------------------------
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false()
 {
@@ -63,42 +58,74 @@ function wpcf7_autop_return_false()
 
 
 
+// ----------------------------------------------------------------------------------------------
 // mw wp form pタグ、brタグの削除
-function mvwpform_autop_filter()
-{
-    if (class_exists('MW_WP_Form_Admin')) {
-        $mw_wp_form_admin = new MW_WP_Form_Admin();
-        $forms = $mw_wp_form_admin->get_forms();
-        foreach ($forms as $form) {
-            add_filter('mwform_content_wpautop_mw-wp-form-' . $form->ID, '__return_false');
-        }
-    }
-}
-mvwpform_autop_filter();
+// ----------------------------------------------------------------------------------------------
+// function mvwpform_autop_filter()
+// {
+//     if (class_exists('MW_WP_Form_Admin')) {
+//         $mw_wp_form_admin = new MW_WP_Form_Admin();
+//         $forms = $mw_wp_form_admin->get_forms();
+//         foreach ($forms as $form) {
+//             add_filter('mwform_content_wpautop_mw-wp-form-' . $form->ID, '__return_false');
+//         }
+//     }
+// }
+// mvwpform_autop_filter();
 
 
 
 
+// ----------------------------------------------------------------------------------------------
 // お問い合わせ完了後サンクスページにジャンプする設定
-add_action('wp_footer', 'add_origin_thanks_page');
-function add_origin_thanks_page()
+// ----------------------------------------------------------------------------------------------
+// add_action('wp_footer', 'add_origin_thanks_page');
+// function add_origin_thanks_page()
+// {
+//     $thanks = home_url('/thanks/');
+//     echo <<< EOC
+//      <script>
+//        var thanksPage = {
+//          42: '{$thanks}',
+//        };
+//      document.addEventListener( 'wpcf7mailsent', function( event ) {
+//        location = thanksPage[event.detail.contactFormId];
+//      }, false );
+//      </script>
+//    EOC;
+// }
+
+
+
+// ----------------------------------------------------------------------------------------------
+// お問い合わせフォームのフリガナバリデーション
+// ----------------------------------------------------------------------------------------------
+function custom_wpcf7_validate_kana($result, $tag)
 {
-    $thanks = home_url('/thanks/');
-    echo <<< EOC
-     <script>
-       var thanksPage = {
-         42: '{$thanks}',
-       };
-     document.addEventListener( 'wpcf7mailsent', function( event ) {
-       location = thanksPage[event.detail.contactFormId];
-     }, false );
-     </script>
-   EOC;
+  $tag   = new WPCF7_Shortcode($tag);
+  $name  = $tag->name;
+  $value = isset($_POST[$name]) ? trim(wp_unslash(strtr((string) $_POST[$name], "\n", " "))) : "";
+
+  // //平仮名のみ
+  if (($name === "kana") && !empty($value)) {
+    $pattern = "/^[ァ-ン]+$/u";
+
+    if (!preg_match($pattern, $value)) {
+      $result->invalidate($tag, "カタカナで入力してください。");
+    }
+  }
+
+
+  return $result;
 }
+add_filter('wpcf7_validate_text', 'custom_wpcf7_validate_kana', 11, 2);
+add_filter('wpcf7_validate_text*', 'custom_wpcf7_validate_kana', 11, 2);
 
 
 
+// ----------------------------------------------------------------------------------------------
 // archive.phpのスラッグ名指定
+// ----------------------------------------------------------------------------------------------
 function post_has_archive($args, $post_type)
 {
     if ('post' == $post_type) {
@@ -112,7 +139,9 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 
 
-// archive.phpのパンくずへの表示
+// ----------------------------------------------------------------------------------------------
+// Breadcrumb NavXT  archive.phpのパンくずへの表示
+// ----------------------------------------------------------------------------------------------
 function my_static_breadcrumb_adder($breadcrumb_trail)
 {
   if (get_post_type() === 'post') {

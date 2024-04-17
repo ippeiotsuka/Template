@@ -9,7 +9,7 @@
     </div>
   </div>
   <main class="l-main">
-    <div class="btn-wrap"><a href="" class=" p-top-sec__btn c-btn">ボタン</a></div>
+    <div class="btn-wrap"><a href="" class=" p-top-sec__btn c-cta-btn">お問い合わせ</a></div>
   </main>
 </div>
 <?php get_footer(); ?>

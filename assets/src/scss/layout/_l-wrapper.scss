@@ -1,1 +1,8 @@
 @use "../global/" as *;
+
+.l-wrapper {
+  margin-top: 60px; //ヘッダー分の余白
+  @include tb {
+    margin-top: 80px; //ヘッダー分の余白
+  }
+}

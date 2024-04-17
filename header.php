@@ -50,11 +50,6 @@
       }
       ?>
       <div class="l-header__right">
-        <button class="l-header__hamburger l-header-hamburger">
-          <span class="l-header-hamburger__bar"></span>
-          <span class="l-header-hamburger__bar"></span>
-          <span class="l-header-hamburger__bar"></span>
-        </button>
         <nav class="l-header__nav l-header-nav">
           <ul class="l-header-nav__list">
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">トップ</a></li>
@@ -64,6 +59,12 @@
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">ブログ</a></li>
           </ul>
         </nav>
+        <a href="<?php echo esc_url(home_url('/contact')); ?>" class="l-header__cta-btn c-cta-btn">お問い合わせ</a>
+        <button class="l-header__hamburger l-header-hamburger">
+          <span class="l-header-hamburger__bar"></span>
+          <span class="l-header-hamburger__bar"></span>
+          <span class="l-header-hamburger__bar"></span>
+        </button>
       </div>
     </div>
     <div class="l-header__window l-header-window">

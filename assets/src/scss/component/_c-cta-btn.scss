@@ -1,14 +1,16 @@
 @use "../global/" as *;
 
-.c-btn {
+.c-cta-btn {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 90%;
-  max-width: 300px;
-  padding: 16px 0;
+  width: 220px;
+  padding: 18px 0;
   background: $c-main;
   color: $c-white;
+  @include s-max {
+    width:90%;
+  }
 }
 
 // 削除する

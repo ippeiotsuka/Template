@@ -1,0 +1,9 @@
+@use "../global/" as *;
+
+.p-contact{
+  padding: 64px 0;
+  background: $c-bg;
+  @include pc {
+    padding: 88px 0;
+  }
+}

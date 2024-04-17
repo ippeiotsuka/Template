@@ -1,0 +1,27 @@
+@use "../global/" as *;
+
+.p-thanks {
+  padding: 64px 0;
+  background: $c-bg;
+  @include pc {
+    padding: 88px 0;
+  }
+}
+
+.p-thanks__content {
+  padding: 48px 24px;
+  background: $c-white;
+  text-align: center;
+  @include pc {
+    padding: 80px;
+  }
+}
+
+.p-thanks__head {
+  @include font(26, 26, 0, 700);
+}
+
+.p-thanks__txt {
+  margin-top: 16px;
+  @include font(16, 24, 0, 400);
+}

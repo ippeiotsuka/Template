@@ -1,0 +1,339 @@
+@use "../global/" as *;
+
+.c-form {
+  padding: 48px 24px;
+  background: $c-white;
+  @include pc {
+    padding: 80px;
+  }
+}
+
+.c-form__ttl-desc {
+  text-align: center;
+}
+
+.c-form__ttl {
+  @include font(26, 26, 0, 700);
+}
+
+.c-form__desc {
+  margin-top: 16px;
+  @include font(16, 24, 0, 400);
+}
+
+.c-form__item-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  @include pc {
+    margin-top: 64px;
+  }
+}
+
+.c-form-item {
+  @include pc {
+    gap: 40px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 40px;
+    @include pc {
+      margin-top: 56px;
+    }
+  }
+}
+
+.c-form-item__name-box {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.c-form-item__name {
+  @include font(16, 16, 0, 700);
+}
+
+.c-form-item__required {
+  padding: 4px;
+  background: red;
+  color: $c-white;
+  @include font(12, 12, 0, 400);
+}
+
+// ----------------------------------------------------------------------------------------------
+// 入力欄
+// ----------------------------------------------------------------------------------------------
+.c-form-item__data {
+  width: 100%;
+  margin-top: 14px;
+  @include pc {
+    margin-top: 20px;
+  }
+
+  //テキスト
+  &--txt {
+    input {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #b4b4b4;
+      @include pc {
+        padding: 12px;
+      }
+    }
+  }
+
+  //ラジオボタン
+  &--radio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include pc {
+      gap: 20px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      display: none;
+
+      &:checked + span::after {
+        opacity: 1;
+      }
+    }
+
+    .wpcf7-list-item-label {
+      position: relative;
+      @include font(16, 16, 0, 400);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(-75%);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $c-black;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%) translateX(-100%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $c-black;
+        opacity: 0;
+      }
+    }
+
+    .wpcf7-list-item {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .wpcf7-list-item-label {
+      padding-left: 20px;
+    }
+  }
+
+  //チェックボックス
+  &--check {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include pc {
+      gap: 20px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      display: none;
+
+      &:checked + span::after {
+        opacity: 1;
+      }
+    }
+
+    .wpcf7-list-item-label {
+      position: relative;
+      @include font(16, 16, 0, 400);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(-75%);
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $c-black;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-60%) translateX(-95%) rotate(135deg);
+        width: 10px;
+        height: 5px;
+        border-top: 2px solid $c-black;
+        border-right: 2px solid $c-black;
+        opacity: 0;
+      }
+    }
+
+    .wpcf7-list-item {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .wpcf7-list-item-label {
+      padding-left: 22px;
+    }
+  }
+
+  //テキストエリア
+  &--textarea {
+    textarea {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #b4b4b4;
+      resize: vertical;
+      @include pc {
+        padding: 12px;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// プライバシーポリシー
+// ----------------------------------------------------------------------------------------------
+.c-form-privacy {
+  margin-top: 64px;
+  text-align: center;
+}
+
+.c-form-privacy__desc {
+  @include font(14, 21, 0, 400);
+}
+
+.c-form-privacy__link {
+  color: #2066c2;
+  text-decoration: underline;
+}
+
+.c-form-privacy__check {
+  display: inline-block;
+  margin-top: 16px;
+  @include font(14, 14, 0, 400);
+
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+
+    &:checked + span::after {
+      opacity: 1;
+    }
+  }
+
+  .wpcf7-list-item-label {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateX(-75%);
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $c-black;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      transform: translateY(-60%) translateX(-90%) rotate(135deg);
+      width: 10px;
+      height: 5px;
+      border-top: 2px solid $c-black;
+      border-right: 2px solid $c-black;
+      opacity: 0;
+    }
+  }
+
+  .wpcf7-list-item {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .wpcf7-list-item-label {
+    padding-left: 12px;
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// 送信ボタン
+// ----------------------------------------------------------------------------------------------
+.c-form__submit-wrap {
+  width: 250px;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-left: auto;
+
+  input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid $c-black;
+    background: $c-white;
+    color: $c-black;
+    transition: 0.1s;
+    @include font(16, 16, 0, 400);
+    cursor: pointer;
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+//送信完了、入力問題のテキストを無くす
+// ----------------------------------------------------------------------------------------------
+.wpcf7-response-output{
+  display: none;
+}
+
+// ----------------------------------------------------------------------------------------------
+// 入力エラーのテキスト調整
+// ----------------------------------------------------------------------------------------------
+.wpcf7-not-valid-tip{
+  margin-top: 4px;
+  font-size: 1.4rem;
+}

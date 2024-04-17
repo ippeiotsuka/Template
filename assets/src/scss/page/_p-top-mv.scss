@@ -1,11 +1,9 @@
 @use "../global/" as *;
 
 .p-top-mv{
-  margin-top: 64px; //ヘッダー分の余白
   padding: 350px 16px 40px;
   background: url(../img/image_dummy.png) no-repeat center center / cover;
   @include tb {
-    margin-top: 80px; //ヘッダー分の余白
     padding: 450px 24px 56px;
   }
 }
