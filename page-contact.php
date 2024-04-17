@@ -9,7 +9,7 @@
             <p class="c-form__desc"><span class="u-br">下記の送信フォームより</span><span class="u-br">送信して下さい。</span></p>
           </div>
           <div class="c-form__item-group">
-            <!-- <div class="c-form__item c-form-item">
+            <div class="c-form__item c-form-item">
               <div class="c-form-item__name-box">
                 <div class="c-form-item__name">名前</div>
                 <div class="c-form-item__required">必須</div>
@@ -84,7 +84,7 @@
               <span class="c-form-item__data c-form-item__data--check">
                 <span class="wpcf7-list-item">
                   <label for="check1">
-                    <input type="checkbox" name="check" id="check1" checked>
+                    <input type="checkbox" name="check" id="check1">
                     <span class="wpcf7-list-item-label">チェックボックス1</span>
                   </label>
                 </span>
@@ -121,7 +121,7 @@
               <span class="c-form-privacy__check">
                 <span class="wpcf7-list-item">
                   <label for="check1">
-                    <input type="checkbox" name="check" id="check1" checked>
+                    <input type="checkbox" name="check" id="check1">
                     <span class="wpcf7-list-item-label">プライバシーポリシーに同意する</span>
                   </label>
                 </span>
@@ -129,11 +129,11 @@
             </div>
             <div class="c-form__submit-wrap">
               <input type="submit" value="送信する">
-            </div> -->
+            </div>
 
 
             <!-- contactform7のショートコード -->
-            <?php echo apply_shortcodes('[contact-form-7 id="877616c" title="コンタクトフォーム 1"]'); ?>
+            <!-- <?php echo apply_shortcodes('[contact-form-7 id="877616c" title="コンタクトフォーム 1"]'); ?> -->
           </div>
         </div>
       </div>
