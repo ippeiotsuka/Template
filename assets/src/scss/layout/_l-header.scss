@@ -37,14 +37,14 @@
     width: 100%;
   }
 }
-
+//js
 .is-active .l-header__logo {
   path {
     fill: $c-white;
   }
 }
 
-.l-header__right{
+.l-header__right {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -63,10 +63,10 @@
   gap: 24px;
 }
 
-.l-header__cta-btn{
+.l-header__cta-btn-wrap {
   display: none;
   @include pc {
-    display: flex;
+    display: block;
   }
 }
 
@@ -109,7 +109,7 @@
     transform: translateY(-100%);
   }
 }
-
+//js
 .is-active .l-header-hamburger__bar {
   background: $c-white;
 
@@ -145,7 +145,7 @@
     display: none;
   }
 }
-
+//js
 .is-active .l-header-window {
   left: 0;
   opacity: 1;

@@ -2,12 +2,12 @@
 /*
  * 機能：clamp関数の文字列を返す
  * 引数：$size-at-min-width サイズ(フォントサイズなど)の最小値(pxやremなどの単位は必須)
- * 　　　$size-at-max-width サイズ(フォントサイズなど)の最大値(pxやremなどの単位は必須)
- * 　　　$min-width [省略可]サイズが最小値に到達する画面幅
- * 　　　$max-width [省略可]サイズが最大値に到達する画面幅
+ *      $size-at-max-width サイズ(フォントサイズなど)の最大値(pxやremなどの単位は必須)
+ *      $min-width [省略可]サイズが最小値に到達する画面幅
+ *      $max-width [省略可]サイズが最大値に到達する画面幅
  * 使用方法：
- *　　デフォルトの最小画面幅$min-widthと最大画面幅$max-widthを事前に指定しておく
- *　　最小幅と最大幅をデフォルト以外にしたい場合は、引数にそれぞれ単位付きの画面幅を入れる
+ *    デフォルトの最小画面幅$min-widthと最大画面幅$max-widthを事前に指定しておく
+ *    最小幅と最大幅をデフォルト以外にしたい場合は、引数にそれぞれ単位付きの画面幅を入れる
  */
 html {
   color: #000;
@@ -392,11 +392,6 @@ body.is-active {
   }
 }
 
-@media screen and (min-width: 1080px) {
-  .c-form-item {
-    gap: 40px;
-  }
-}
 .c-form-item:not(:first-child) {
   margin-top: 40px;
 }
@@ -745,12 +740,12 @@ body.is-active {
   gap: 24px;
 }
 
-.l-header__cta-btn {
+.l-header__cta-btn-wrap {
   display: none;
 }
 @media screen and (min-width: 1080px) {
-  .l-header__cta-btn {
-    display: flex;
+  .l-header__cta-btn-wrap {
+    display: block;
   }
 }
 
@@ -901,16 +896,16 @@ body.is-active {
   width: 100px;
   transition: 0.3s;
 }
+.l-footer__logo svg {
+  width: 100%;
+}
+.l-footer__logo svg path {
+  fill: #ffffff;
+}
 @media screen and (min-width: 768px) {
   .l-footer__logo {
     width: 124px;
   }
-}
-.l-footer__logo svg {
-  width: 100%;
-}
-.l-footer__logo path {
-  fill: #ffffff;
 }
 
 .l-footer__address {
