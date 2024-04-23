@@ -120,8 +120,8 @@
               <p class="c-form-privacy__desc"><span class="u-br"><a class="c-form-privacy__link" href="">プライバシーポリシー</a>に同意の上、</span><span class="u-br">送信ください。</span></p>
               <span class="c-form-privacy__check">
                 <span class="wpcf7-list-item">
-                  <label for="check1">
-                    <input type="checkbox" name="check" id="check1">
+                  <label for="privacy">
+                    <input type="checkbox" name="privacy" id="privacy">
                     <span class="wpcf7-list-item-label">プライバシーポリシーに同意する</span>
                   </label>
                 </span>
