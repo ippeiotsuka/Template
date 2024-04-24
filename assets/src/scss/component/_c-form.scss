@@ -37,6 +37,14 @@
       margin-top: 56px;
     }
   }
+
+  //ContactForm7に書換時にこのコードに切り替える
+  // &:not(:nth-child(2)) {
+  //   margin-top: 40px;
+  //   @include pc {
+  //     margin-top: 56px;
+  //   }
+  // }
 }
 
 .c-form-item__name-box {
