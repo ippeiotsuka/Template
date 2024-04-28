@@ -1,0 +1,18 @@
+@use "../global/" as *;
+
+.p-archive{
+  margin-top: 64px;
+  @include pc {
+    margin-top: 80px;
+  }
+}
+
+.p-archive__post-group{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    gap: 32px;
+    @include pc {
+    grid-template-columns:repeat(3, 1fr);
+    gap: 40px 32px;
+    }
+}

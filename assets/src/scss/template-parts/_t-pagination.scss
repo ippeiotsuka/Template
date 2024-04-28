@@ -1,0 +1,41 @@
+@use "../global/" as *;
+
+.t-pagination {
+  margin-top: 56px;
+  @include pc {
+    margin-top: 72px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    @include pc {
+      gap: 10px;
+    }
+
+    .page-numbers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $c-black;
+      @include font(18, 18, 0, 700);
+      @include pc {
+        width: 50px;
+        height: 50px;
+      }
+
+      &.current {
+        background: $c-black;
+        color: $c-white;
+      }
+
+      &.dots {
+        border: none;
+      }
+    }
+  }
+}

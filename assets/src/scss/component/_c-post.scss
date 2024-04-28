@@ -1,0 +1,31 @@
+@use "../global/" as *;
+
+.c-post__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.c-post__img {
+  width: 100%;
+  img {
+    aspect-ratio: 960 / 640;
+  }
+}
+
+.c-post__head {
+  height: 56px; // 1行の場合の高さ確保
+  @include font(18, 27, 0, 700);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-all; //英語を改行させる
+}
+
+.c-post__date {
+  display: block;
+  margin-top: 12px;
+  text-align: right;
+  font-size: 1.4rem;
+}

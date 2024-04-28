@@ -1,3 +1,10 @@
+//トップページ
 @forward "p-top-mv";
+//通常投稿一覧ページ
+@forward "p-archive";
+//通常投稿詳細ページ
+@forward "p-single";
+//お問い合わせページ
 @forward "p-contact";
+//お問い合わせ完了ページ
 @forward "p-thanks";

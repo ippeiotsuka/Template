@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <div class="l-wrapper">
+  <?php get_template_part('template-parts/t-top-scroll-btn'); ?>
   <div class="p-top-mv">
     <div class="p-top-mv__txt-box">
       <h2 class="p-top-mv__head">MV見だし</h2>

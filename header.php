@@ -56,7 +56,7 @@
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">サービス</a></li>
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">事例</a></li>
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">会社概要</a></li>
-            <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">ブログ</a></li>
+            <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/archive')); ?>">ブログ</a></li>
           </ul>
         </nav>
         <div class="l-header__cta-btn-wrap"><a href="<?php echo esc_url(home_url('/contact')); ?>" class="l-header__cta-btn c-cta-btn">お問い合わせ</a></div>

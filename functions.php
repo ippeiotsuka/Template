@@ -75,28 +75,6 @@ function wpcf7_autop_return_false()
 
 
 
-
-// ----------------------------------------------------------------------------------------------
-// お問い合わせ完了後サンクスページにジャンプする設定
-// ----------------------------------------------------------------------------------------------
-// add_action('wp_footer', 'add_origin_thanks_page');
-// function add_origin_thanks_page()
-// {
-//     $thanks = home_url('/thanks/');
-//     echo <<< EOC
-//      <script>
-//        var thanksPage = {
-//          42: '{$thanks}',
-//        };
-//      document.addEventListener( 'wpcf7mailsent', function( event ) {
-//        location = thanksPage[event.detail.contactFormId];
-//      }, false );
-//      </script>
-//    EOC;
-// }
-
-
-
 // ----------------------------------------------------------------------------------------------
 // お問い合わせフォームのフリガナバリデーション
 // ----------------------------------------------------------------------------------------------
@@ -131,7 +109,7 @@ function post_has_archive($args, $post_type)
     if ('post' == $post_type) {
         $args['rewrite'] = true;
         $args['has_archive'] = 'archive';
-        // $args['label'] = '投稿';
+        // $args['label'] = 'ブログ';
     }
     return $args;
 }
@@ -145,7 +123,7 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 function my_static_breadcrumb_adder($breadcrumb_trail)
 {
   if (get_post_type() === 'post') {
-    $item = new bcn_breadcrumb('BLOG', NULL, array('post'), home_url('archive/'), null, true);
+    $item = new bcn_breadcrumb('ブログ', NULL, array('post'), home_url('archive/'), null, true);
     $stuck = array_pop($breadcrumb_trail->breadcrumbs); // HOMEのパンくず一時退避
     $breadcrumb_trail->breadcrumbs[] = $item; //投稿のパンくず追加
     $breadcrumb_trail->breadcrumbs[] = $stuck; //HOMEのパンくずを戻す
@@ -155,15 +133,29 @@ add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
 
 
 // ----------------------------------------------------------------------------------------------
-// コンテンツごとにアーカイブページの表示件数を変更する(使用時にコメントアウトする)
+// ページネーションのh2を非表示に(ページネーション実装時にコメントアウト)
+// ----------------------------------------------------------------------------------------------
+// function cut_screen_reader_text($template)
+// {
+//   $template = '
+// 		<nav class="navigation %1$s" aria-label="%4$s">
+// 			<div class="nav-links">%3$s</div>
+// 		</nav>';
+//   return $template;
+// }
+// add_filter('navigation_markup_template', 'cut_screen_reader_text');
+
+
+// ----------------------------------------------------------------------------------------------
+// コンテンツごとにアーカイブページの表示件数を変更する(使用時にコメントアウト)
 // ----------------------------------------------------------------------------------------------
 // function change_posts_per_page($query) {
 //     if ( is_admin() || ! $query->is_main_query() )
 //         return;
 
-//     /* アーカイブページの時に表示件数を10件にセット */
+//     /* アーカイブページの時に表示件数を9件にセット */
 //     if ( $query->is_archive() ) {
-//         $query->set( 'posts_per_page', '10' );
+//         $query->set( 'posts_per_page', '9' );
 //     }
 //     /* ポストアーカイブの時に表示件数を15件にセット */
 //     if ( $query->is_post_type_archive() ) {
@@ -181,5 +173,9 @@ add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
 //     if ( $query->is_tag() ) {
 //         $query->set( 'posts_per_page', '30' );
 //     }
+//    /* taxonomy-○○ページの時に表示件数を25件にセット */
+//    if ($query->is_tax('ここにタクソノミーのスラッグを入れる')) {
+//      $query->set('posts_per_page', '2');
+//    }
 // }
 // add_action( 'pre_get_posts', 'change_posts_per_page' );

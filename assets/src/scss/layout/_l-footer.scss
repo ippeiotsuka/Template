@@ -2,8 +2,11 @@
 
 .l-footer {
   margin-top: auto;
-  padding-top: 48px;
+  padding-top: 64px;
   color: $c-white;
+  @include pc {
+    padding-top: 80px;
+  }
 }
 
 .l-footer__wrap {

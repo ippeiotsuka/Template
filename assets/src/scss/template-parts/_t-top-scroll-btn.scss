@@ -1,0 +1,38 @@
+@use "../global/" as *;
+
+.t-top-scroll-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 39.5px;
+  display: none;
+  width: 64px;
+  height: 64px;
+  padding-top: 14px;
+  color: $c-white;
+  @include font(14, 24.5, 20, 700);
+  background-color: #9c9c9c;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  z-index: 10;
+  box-shadow: 2px 2px 4px rgba($color: #272727, $alpha: 0.3);
+  @include tb {
+    display: block;
+  }
+
+  &::before {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-top: 3px solid $c-white;
+    border-left: 3px solid $c-white;
+    transform: translateY(-50%) translateX(-50%) rotate(45deg);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

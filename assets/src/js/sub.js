@@ -1,5 +1,4 @@
 export function functionName() {
-
   // ----------------------------------------------------------------------------------------------
   // サンクスページへの遷移
   // ----------------------------------------------------------------------------------------------
@@ -53,4 +52,26 @@ export function functionName() {
   }
   window.addEventListener("load", checkWidth);
   window.addEventListener("resize", checkWidth);
+
+  // ----------------------------------------------------------------------------------------------
+  // トップスクロールボタンの設定
+  // ----------------------------------------------------------------------------------------------
+  const topScrollBtn = document.querySelector(".t-top-scroll-btn");
+
+  // 100px以上スクロールしたらボタンを表示させ、それ以下の場合は非表示にする
+  $(".t-top-scroll-btn").hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $(".t-top-scroll-btn").fadeIn();
+    } else {
+      $(".t-top-scroll-btn").fadeOut();
+    }
+  });
+
+  //クリックイベントを追加
+  topScrollBtn.addEventListener("click", scroll_to_top);
+
+  function scroll_to_top() {
+    window.scroll({ top: 0, behavior: "smooth" });
+  }
 }

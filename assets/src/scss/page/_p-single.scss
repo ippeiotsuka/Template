@@ -1,0 +1,218 @@
+@use "../global/" as *;
+
+.p-single {
+  margin-top: 64px;
+  @include pc {
+    margin-top: 80px;
+  }
+}
+
+.p-single__img{
+  img{
+    aspect-ratio: 960 / 640;
+  }
+}
+
+.p-single__head {
+  margin-top: 24px;
+  @include font(26, 39, 0, 700);
+  @include pc {
+    margin-top: 40px;
+    @include font(32, 48, 0, 700);
+  }
+}
+
+.p-single__date {
+  display: inline-block;
+  margin-top: 16px;
+  @include pc {
+    margin-top: 24px;
+  }
+}
+
+.p-single__content {
+  margin-top: 40px;
+  @include pc {
+    margin-top: 56px;
+  }
+
+  * {
+    margin-top: 24px;
+    @include font(16, 24, 0, 400);
+    word-break: break-all; //英語を改行させる
+    @include pc {
+      margin-top: 32px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  // ---------------------------------------
+  // 見出し
+  // ---------------------------------------
+  h1 {
+    @include font(26, 39, 0, 700);
+    @include pc {
+      margin-top: 40px;
+      @include font(32, 48, 0, 700);
+    }
+  }
+
+  h2 {
+    @include font(24, 36, 0, 700);
+    @include pc {
+      @include font(28, 42, 0, 700);
+    }
+  }
+
+  h3 {
+    position: relative;
+    padding-left: 12px;
+    @include font(22, 33, 0, 700);
+    @include pc {
+      @include font(26, 39, 0, 700);
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: inline-block;
+      content: "";
+      width: 6px;
+      height: 100%;
+      background: $c-main;
+      transform: translateY(-50%);
+    }
+  }
+
+  h4 {
+    @include font(18, 27, 0, 700);
+    @include pc {
+      @include font(20, 30, 0, 700);
+    }
+  }
+
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
+  // ---------------------------------------
+  // リスト関連
+  // ---------------------------------------
+  ul,
+  ol {
+    margin-left: 1em;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin-top: 0;
+  }
+
+  // ---------------------------------------
+  // テーブル、データリスト
+  // ---------------------------------------
+  tr,
+  th,
+  td {
+    margin-top: 0;
+    border: 1px solid #000000;
+  }
+
+  th,
+  td,
+  dt,
+  dd {
+    padding: 8px;
+    @include pc {
+      padding: 16px;
+    }
+  }
+
+  dt,
+  dd {
+    margin-top: 0;
+    border-top: 1px solid $c-black;
+    border-left: 1px solid $c-black;
+
+    &:last-of-type {
+      border-bottom: 1px solid $c-black;
+    }
+  }
+
+  th {
+    white-space: nowrap;
+  }
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  dt {
+    width: 30%;
+  }
+
+  dd {
+    width: 70%;
+    border-right: 1px solid $c-black;
+  }
+
+  blockquote {
+    padding: 12px;
+    background: #f8f8f8;
+
+    &::before {
+      content: "″";
+      color: #b4b4b4;
+      @include font(40, 40, 0, 900);
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  pre {
+    width: 100%;
+    max-width: 100%;
+    white-space: pre-wrap;
+  }
+
+  address {
+    p {
+      margin-top: 0;
+    }
+  }
+}
