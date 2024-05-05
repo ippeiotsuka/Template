@@ -155,6 +155,7 @@ svg {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  min-inline-size: 0;
 }
 
 *::before,

@@ -16,6 +16,14 @@
         <div class="p-single__content">
           <?php the_content(); ?>
         </div>
+        <div class="p-single__pagination">
+          <?php
+          the_post_navigation(array(
+            'prev_text' => '&lt; 前の記事',
+            'next_text' => '次の記事 &gt;',
+          ));
+          ?>
+        </div>
       </div>
     </div>
   </main>

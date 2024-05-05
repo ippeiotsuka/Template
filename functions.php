@@ -135,15 +135,15 @@ add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
 // ----------------------------------------------------------------------------------------------
 // ページネーションのh2を非表示に(ページネーション実装時にコメントアウト)
 // ----------------------------------------------------------------------------------------------
-// function cut_screen_reader_text($template)
-// {
-//   $template = '
-// 		<nav class="navigation %1$s" aria-label="%4$s">
-// 			<div class="nav-links">%3$s</div>
-// 		</nav>';
-//   return $template;
-// }
-// add_filter('navigation_markup_template', 'cut_screen_reader_text');
+function cut_screen_reader_text($template)
+{
+  $template = '
+		<nav class="navigation %1$s" aria-label="%4$s">
+			<div class="nav-links">%3$s</div>
+		</nav>';
+  return $template;
+}
+add_filter('navigation_markup_template', 'cut_screen_reader_text');
 
 
 // ----------------------------------------------------------------------------------------------

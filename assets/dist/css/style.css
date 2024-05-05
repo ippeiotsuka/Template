@@ -166,6 +166,7 @@ svg {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  min-inline-size: 0;
 }
 
 *::before,
@@ -1409,6 +1410,19 @@ a {
 }
 .p-single__content address p {
   margin-top: 0;
+}
+
+.p-single__pagination {
+  margin-top: 32px;
+}
+@media screen and (min-width: 1080px) {
+  .p-single__pagination {
+    margin-top: 48px;
+  }
+}
+.p-single__pagination .nav-links {
+  display: flex;
+  justify-content: space-between;
 }
 
 .p-contact {
