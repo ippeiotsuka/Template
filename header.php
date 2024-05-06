@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" /> <!-- 電話番号の自動リンク機能の指定 -->
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="webclip.png" /> <!-- Webページのショートカットを作成したとき、Webページをスマートフォンのホーム画面に追加したときに表示されるアイコン -->
   <meta property="og:site_name" content="ページタイトル" />
   <meta property="og:url" content="<?php the_permalink(); ?>" />
@@ -55,8 +53,8 @@
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">トップ</a></li>
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">サービス</a></li>
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">事例</a></li>
-            <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">会社概要</a></li>
             <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/archive')); ?>">ブログ</a></li>
+            <li class="l-header-nav__item"><a href="<?php echo esc_url(home_url('/custom-post')); ?>">カスタム投稿</a></li>
           </ul>
         </nav>
         <div class="l-header__cta-btn-wrap"><a href="<?php echo esc_url(home_url('/contact')); ?>" class="l-header__cta-btn c-cta-btn">お問い合わせ</a></div>
@@ -74,8 +72,9 @@
           <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">サービス</a></li>
           <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">事例</a></li>
           <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">会社概要</a></li>
-          <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">ブログ</a></li>
-        </ul>
+          <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/archive')); ?>">ブログ</a></li>
+          <li class="l-header-window-nav__item"><a href="<?php echo esc_url(home_url('/archive')); ?>">ブログ</a><a href="<?php echo esc_url(home_url('/custom-post')); ?>">カスタム投稿</a>
       </nav>
     </div>
   </header>
+  <?php get_template_part('template-parts/t-top-scroll-btn'); ?>

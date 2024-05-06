@@ -7,6 +7,16 @@
   }
 }
 
+// ---------------------------------------
+// h2(関連記事など)
+// ---------------------------------------
+.p-single__h2 {
+  @include font(24, 36, 0, 700);
+  @include pc {
+    @include font(28, 42, 0, 700);
+  }
+}
+
 .p-single__img {
   img {
     aspect-ratio: 960 / 640;
@@ -232,5 +242,34 @@
   .nav-links {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+// ----------------------------------------------------------------------------------------------
+// 関連記事
+// ----------------------------------------------------------------------------------------------
+.p-single-related {
+  margin-top: 32px;
+  @include pc {
+    margin-top: 48px;
+  }
+}
+
+.p-single-related__post-group {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+  @include pc {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 32px;
+    margin-top: 32px;
+  }
+}
+
+.p-single-relate__no{
+  flex-shrink: 0;
+  @include pc {
+    width: 500px;
   }
 }

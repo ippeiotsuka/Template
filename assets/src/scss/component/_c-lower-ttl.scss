@@ -1,0 +1,9 @@
+@use "../global/" as *;
+
+.c-lower-ttl{
+  text-align: center;
+  @include font(26,39,0,700);
+  @include pc {
+    @include font(32,48,0,700);
+  }
+}

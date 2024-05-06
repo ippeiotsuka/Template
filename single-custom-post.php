@@ -29,21 +29,26 @@
           <div class="p-single-related__post-group">
             <?php
             $current_id = get_the_ID();
-            $category_ids = wp_get_post_categories($current_id);
-            $category_check = get_the_category($current_id);
-            if ($category_check && !is_wp_error($category_check)) {
+            $terms = get_the_terms($current_id, 'custom-taxonomy');//タクソノミースラッグを書き換える
+            if ($terms && !is_wp_error($terms)) {
+              $term_ids = wp_list_pluck($terms, 'term_id');
               $args = [
-                'post_type' => 'post',
+                'post_type' => 'custom-post',//カスタム投稿名
                 'posts_per_page' => 3,
-                'category__in' => $category_ids,
+                'tax_query' => [
+                  [
+                    'taxonomy' => 'custom-taxonomy',//タクソノミースラッグを書き換える
+                    'field' => 'term_id',
+                    'terms' => $term_ids,
+                  ]
+                ],
                 'post__not_in' => array($current_id),
-                'orderby' => 'DESC' //並び順
               ];
               $related_post = new WP_Query($args);
               if ($related_post->have_posts()) :
                 while ($related_post->have_posts()) : $related_post->the_post();
             ?>
-                  <article class="p-single-related__post c-post">
+                  <article class="c-post">
                     <a href="<?php the_permalink(); ?>" class="c-post__wrap">
                       <div class="c-post__img">
                         <?php if (has_post_thumbnail()) : /* もしアイキャッチが登録されていたら */ ?>
@@ -60,7 +65,7 @@
                   </article>
                 <?php endwhile; ?>
               <?php else : ?>
-                <p class="p-single-relate__no">記事がありません</p>
+                <p class="p-single-relate__no"> 記事がありません</p>
               <?php
               endif;
               wp_reset_postdata();
@@ -68,7 +73,7 @@
           </div>
         <?php
             } else {
-              echo '<p class="p-single-relate__no">関連するカテゴリーの記事が見つかりません。</p>';
+              echo '<p class="p-single-relate__no">関連する記事が見つかりません。</p>';
             }
         ?>
         </div>

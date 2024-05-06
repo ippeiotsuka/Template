@@ -6,10 +6,33 @@ export function functionName() {
     document.addEventListener(
       "wpcf7mailsent",
       function (event) {
-        location = "http://localhost:8081/thanks/";
+        location = "http://localhost:8080/thanks/"; //urlがあっているか要確認
       },
       false
     );
+  });
+
+  // ----------------------------------------------------------------------------------------------
+  // バリデーション対策
+  // ----------------------------------------------------------------------------------------------
+  //formタグにクラス追加
+  $(".wpcf7-form").addClass("hide_error_message");
+
+  //送信または確認ボタンをクリックしたとき
+  $(".wpcf7-confirm, .wpcf7-submit").click(function () {
+    //formからクラスを削除
+    $(".wpcf7-form").removeClass("hide_error_message");
+  });
+
+  $("select option:first-child").addClass("c-form__select--default");
+
+  $("select").on("change", function () {
+    var itemSelect = $(this)
+      .find("option:selected")
+      .hasClass("c-form__select--default");
+    $(this)
+      .parents(".wpcf7-form-control-wrap")
+      .toggleClass("c-form__select--selected", !itemSelect);
   });
 
   // ----------------------------------------------------------------------------------------------

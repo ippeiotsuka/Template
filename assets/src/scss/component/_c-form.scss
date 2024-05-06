@@ -55,7 +55,7 @@
 }
 
 .c-form-item__name {
-  @include font(16, 16, 0, 700);
+  @include font(18, 18, 0, 700);
 }
 
 .c-form-item__required {
@@ -75,11 +75,59 @@
     margin-top: 20px;
   }
 
+  input{
+    &::placeholder{
+      color: #b1b1b1;
+    }
+  }
+
   //テキスト
   &--txt {
     input {
       width: 100%;
-      padding: 6px;
+      padding: 10px;
+      border: 1px solid #b4b4b4;
+      @include pc {
+        padding: 12px;
+      }
+    }
+  }
+
+  //電話番号(ハイフンごとに分かれている時)
+  &--tel {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    input {
+      width: 100%;
+      max-width: 100px;
+      padding: 10px;
+      border: 1px solid #b4b4b4;
+      @include pc {
+        padding: 12px;
+      }
+    }
+  }
+
+  //住所(分かれている場合)
+  &--address {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .c-form-item__post-num {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      input {
+        width: 150px;
+      }
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
       border: 1px solid #b4b4b4;
       @include pc {
         padding: 12px;
@@ -214,11 +262,60 @@
     }
   }
 
+  //セレクトボックス
+  &--select {
+    z-index: $z1; //矢印調整のため
+    position: relative;
+    max-width: 200px;
+
+    input,
+    select {
+      width: 100%;
+      display: block;
+      padding: 10px;
+      border: 1px solid #b4b4b4;
+      color: #b1b1b1;
+      @include font(16, 24, 0, 400);
+      appearance: none;
+      @include pc {
+        padding: 12px;
+      }
+    }
+
+    &::after {
+      z-index: $z-1; //矢印調整のため
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid $c-black;
+      border-right: 2px solid $c-black;
+      transform: translateY(-50%) rotate(135deg);
+      cursor: pointer;
+    }
+
+    //optionの色を変更
+    option {
+      color: $c-black;
+    }
+
+    .c-form__select--default {
+      color: #b1b1b1;
+    }
+
+    .c-form__select--selected select {
+      color: $c-black;
+    }
+  }
+
   //テキストエリア
   &--textarea {
     textarea {
       width: 100%;
-      padding: 6px;
+      padding: 10px;
       border: 1px solid #b4b4b4;
       resize: vertical;
       @include pc {
@@ -330,14 +427,39 @@
 // ----------------------------------------------------------------------------------------------
 //送信完了、入力問題のテキストを無くす
 // ----------------------------------------------------------------------------------------------
-.wpcf7-response-output {
+
+// ----------------------------------------------------------------------------------------------
+// 入力エラーのバリデーション対策、テキスト調整
+// ----------------------------------------------------------------------------------------------
+//バリデーション
+.wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 4px;
+  color: red;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+//ラジオボタンのバリデーション対策
+.wpcf7-form.hide_error_message .wpcf7-not-valid-tip {
   display: none;
 }
 
-// ----------------------------------------------------------------------------------------------
-// 入力エラーのテキスト調整
-// ----------------------------------------------------------------------------------------------
-.wpcf7-not-valid-tip {
+//入力欄が複数ある場合のバリデーション表示を一つに
+.c-form-item--valid .wpcf7-not-valid-tip {
+  display: none;
+}
+
+.c-form-item__error-txt {
+  display: none;
   margin-top: 4px;
+  color: red;
   font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.wpcf7-form:not(.hide_error_message) {
+  .c-form-item--valid:has(.wpcf7-not-valid-tip) .c-form-item__error-txt {
+    display: block;
+  }
 }

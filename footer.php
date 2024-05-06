@@ -21,7 +21,8 @@
             <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">サービス</a></li>
             <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">事例</a></li>
             <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">会社概要</a></li>
-            <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/')); ?>">ブログ</a></li>
+            <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/archive')); ?>">ブログ</a></li>
+            <li class="l-footer-nav__item"><a href="<?php echo esc_url(home_url('/custom-post')); ?>">カスタム投稿</a></li>
           </ul>
         </div>
       </div>

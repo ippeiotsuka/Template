@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="l-wrapper">
-  <?php get_template_part('template-parts/t-breadcrumb') ;?>
+  <?php get_template_part('template-parts/t-breadcrumb'); ?>
   <main class="l-main">
     <div class="p-contact">
       <div class="l-inner">
@@ -45,6 +45,41 @@
               <div class="c-form-item__data c-form-item__data--txt">
                 <input type="tel" name="tel" require>
               </div>
+            </div>
+            <div class="c-form__item c-form-item c-form-item--valid">
+              <div class="c-form-item__name-box">
+                <div class="c-form-item__name">電話番号2</div>
+                <div class="c-form-item__required">必須</div>
+              </div>
+              <div class="c-form-item__data c-form-item__data--tel">
+                <input type="tel" name="tel" require>
+                -
+                <input type="tel" name="tel" require>
+                -
+                <input type="tel" name="tel" require>
+              </div>
+              <span class="c-form-item__error-txt">入力してください。</span>
+            </div>
+            <div class="c-form__item c-form-item">
+              <div class="c-form-item__name-box">
+                <div class="c-form-item__name">住所</div>
+                <div class="c-form-item__required">必須</div>
+              </div>
+              <div class="c-form-item__data c-form-item__data--txt">
+                <input type="text">
+              </div>
+            </div>
+            <div class="c-form__item c-form-item c-form-item--valid">
+              <div class="c-form-item__name-box">
+                <div class="c-form-item__name">住所2</div>
+                <div class="c-form-item__required">必須</div>
+              </div>
+              <div class="c-form-item__data c-form-item__data--address">
+                <div class="c-form-item__post-num">〒<input type="text" name="address-num" require></div>
+                <input type="text" name="address-txt-1" require>
+                <input type="text" name="address-txt-2" require>
+              </div>
+              <span class="c-form-item__error-txt">入力してください。</span>
             </div>
             <div class="c-form__item c-form-item">
               <div class="c-form-item__name-box">
@@ -108,6 +143,20 @@
                   </label>
                 </span>
               </span>
+            </div>
+            <div class="c-form__item c-form-item">
+              <div class="c-form-item__name-box">
+                <div class="c-form-item__name">セレクトボックス</div>
+                <div class="c-form-item__required">必須</div>
+              </div>
+              <div class="c-form-item__data c-form-item__data--select">
+                <select class="x" name="select">
+                  <option>選択してください</option>
+                  <option>セレクトボックス1</option>
+                  <option>セレクトボックス2</option>
+                  <option>セレクトボックス3</option>
+                </select>
+              </div>
             </div>
             <div class="c-form__item c-form-item">
               <div class="c-form-item__name-box">
