@@ -24,6 +24,9 @@ export function functionName() {
     $(".wpcf7-form").removeClass("hide_error_message");
   });
 
+  // ----------------------------------------------------------------------------------------------
+  // セレクトボックスのカラー変更
+  // ----------------------------------------------------------------------------------------------
   $("select option:first-child").addClass("c-form__select--default");
 
   $("select").on("change", function () {
